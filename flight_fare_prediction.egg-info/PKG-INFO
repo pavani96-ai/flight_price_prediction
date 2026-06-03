@@ -1,0 +1,26 @@
+Metadata-Version: 2.4
+Name: flight_fare_prediction
+Version: 0.0.1
+Author: pavani Kusuma
+Author-email: pavanikusuma2020@gmail.com
+License-File: LICENSE
+Requires-Dist: pandas
+Requires-Dist: mlflow
+Requires-Dist: notebook
+Requires-Dist: numpy
+Requires-Dist: ipykernel
+Requires-Dist: scikit-learn
+Requires-Dist: matplotlib
+Requires-Dist: seaborn
+Requires-Dist: python-box
+Requires-Dist: pyYAML
+Requires-Dist: tqdm
+Requires-Dist: ensure
+Requires-Dist: joblib
+Requires-Dist: types-pyYAML
+Requires-Dist: FastApi
+Requires-Dist: dagshub
+Dynamic: author
+Dynamic: author-email
+Dynamic: license-file
+Dynamic: requires-dist

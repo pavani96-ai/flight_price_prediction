@@ -1,0 +1,16 @@
+pandas
+mlflow
+notebook
+numpy
+ipykernel
+scikit-learn
+matplotlib
+seaborn
+python-box
+pyYAML
+tqdm
+ensure
+joblib
+types-pyYAML
+FastApi
+dagshub
