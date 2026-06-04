@@ -1,0 +1,18 @@
+# Add patterns of files dvc should ignore, which could improve
+# the performance. Learn more at
+# https://dvc.org/doc/user-guide/dvcignore
+
+venv
+logs
+artifacts/*
+!artifacts/data_ingestion/feature_store/
+!artifacts/data_ingestion/feature_store/flight_fare.csv
+!artifacts/data_ingestion/feature_store/flight_fare.csv.dvc
+!artifacts/data_ingestion/feature_store/.gitignore
+tmp
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.ipynb_checkpoints
+.DS_Store
