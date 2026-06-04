@@ -1,8 +1,0 @@
-LICENSE
-README.md
-setup.py
-flight_fare_prediction.egg-info/PKG-INFO
-flight_fare_prediction.egg-info/SOURCES.txt
-flight_fare_prediction.egg-info/dependency_links.txt
-flight_fare_prediction.egg-info/requires.txt
-flight_fare_prediction.egg-info/top_level.txt
