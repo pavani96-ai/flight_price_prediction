@@ -12374,7 +12374,7 @@ Jet Airways,27/05/2019,Delhi,Cochin,DEL → AMD → BOM → COK,19:10,19:00 28 M
 Air Asia,12/06/2019,Kolkata,Banglore,CCU → DEL → BLR,07:35,19:25,11h 50m,1 stop,No info,5192
 IndiGo,24/04/2019,Banglore,Delhi,BLR → DEL,13:00,15:50,2h 50m,non-stop,No info,4423
 IndiGo,6/03/2019,Delhi,Cochin,DEL → BBI → COK,02:35,08:30,5h 55m,1 stop,No info,13790
-Air India,6/05/2019,Delhi,Cochin,,09:45,09:25 07 May,23h 40m,,No info,7480
+Air India,6/05/2019,Delhi,Cochin,DEL → BOM → COK,09:45,09:25 07 May,23h 40m,1 stop,No info,7480
 Jet Airways,18/06/2019,Banglore,Delhi,BLR → DEL,11:10,14:05,2h 55m,non-stop,In-flight meal not included,5769
 IndiGo,9/04/2019,Banglore,Delhi,BLR → DEL,01:30,04:15,2h 45m,non-stop,No info,3419
 Jet Airways,9/06/2019,Banglore,Delhi,BLR → DEL,18:55,22:00,3h 5m,non-stop,In-flight meal not included,7229

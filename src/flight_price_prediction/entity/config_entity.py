@@ -10,3 +10,15 @@ class DataIngestionConfig:
     train_test_split_ratio: float
     collection_name: str
     database_name: str
+
+@dataclass
+class DataValidationConfig:
+    root_dir: Path
+    Status_File: Path
+    validated_dir: Path
+    invalid_dir: Path
+    drift_report_dir: Path
+    drift_report_file_name: Path
+    valid_train_file_name: Path
+    valid_test_file_name: Path
+    all_schema: dict

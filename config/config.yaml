@@ -7,3 +7,14 @@ data_ingestion:
   testing_file_name: artifacts/data_ingestion/dataset/test.csv
   collection_name: Flight_price_prediction
   database_name: Flight_Price_Prediction
+
+data_validation:
+  root_dir: artifacts/data_validation
+  validated_dir: artifacts/data_validation/validated_dir
+  invalid_dir: artifacts/data_validation/invalid_dir
+  drift_report_dir: artifacts/data_validation/drift_report_dir
+  drift_report_file_name: artifacts/data_validation/drift_report_dir/report.yaml
+  valid_train_file_name: artifacts/data_validation/validated_dir/train.csv
+  valid_test_file_name: artifacts/data_validation/validated_dir/test.csv
+  Status_File: artifacts/data_validation/status.txt
+  

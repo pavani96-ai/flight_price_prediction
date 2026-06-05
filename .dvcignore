@@ -5,6 +5,7 @@
 venv
 logs
 artifacts/*
+!artifacts/data_ingestion/
 !artifacts/data_ingestion/feature_store/
 !artifacts/data_ingestion/feature_store/flight_fare.csv
 !artifacts/data_ingestion/feature_store/flight_fare.csv.dvc
