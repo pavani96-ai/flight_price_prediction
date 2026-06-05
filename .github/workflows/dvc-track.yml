@@ -30,7 +30,8 @@ jobs:
 
       - name: Configure DVC remote for DagsHub
         run: |
-          dvc remote add -d origin s3://dvc
+          # The -f flag overwrites the existing configuration
+          dvc remote add -f -d origin s3://dvc
           dvc remote modify origin endpointurl https://dagshub.com/pavani96-ai/flight_price_prediction.s3
           dvc remote modify origin access_key_id "${{ secrets.DAGSHUB_USER }}"
           dvc remote modify origin secret_access_key "${{ secrets.DAGSHUB_TOKEN }}"
