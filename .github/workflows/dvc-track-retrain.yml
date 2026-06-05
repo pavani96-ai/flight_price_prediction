@@ -40,7 +40,7 @@ jobs:
 
       - name: Run data ingestion
         env:
-          MONGO_URI: ${{ secrets.MONGO_DB_URL }}
+          MONGO_DB_URL: ${{ secrets.MONGO_DB_URL }}
         run: |
           python main.py
 
