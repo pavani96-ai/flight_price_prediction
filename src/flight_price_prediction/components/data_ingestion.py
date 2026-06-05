@@ -14,7 +14,7 @@ from dotenv import load_dotenv
 load_dotenv()
 from pathlib import Path
 
-MONGO_DB_URL = os.getenv("MONGO_DB_URL")
+MONGO_DB_URL = os.getenv("MONGO_DB_URL", "mongodb://localhost:27017")
 
 class DataIngestion:
     def __init__(self, data_ingestion_config: DataIngestionConfig):

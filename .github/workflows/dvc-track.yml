@@ -41,6 +41,10 @@ jobs:
         run: dvc pull -r origin
 
       - name: Run training/processing script
+        env:
+          # This maps the GitHub Secret to an environment variable the code can read
+          MONGO_DB_URL: ${{ secrets.MONGO_DB_URL }}
+        
         run: python main.py
 
       - name: DVC Add, Commit and Push
