@@ -49,8 +49,9 @@ jobs:
 
       - name: DVC Add, Commit and Push
         run: |
-          # 1. Add data/ folder to DVC
-          dvc add data/
+          # 1. Add the specific file you are tracking
+          # Use the path defined in your .dvcignore
+          dvc add artifacts/data_ingestion/feature_store/flight_fare.csv
           
           # 2. Configure Git for the bot
           git config user.name "github-actions[bot]"
