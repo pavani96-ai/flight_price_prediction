@@ -50,7 +50,6 @@ jobs:
       - name: DVC Add, Commit and Push
         run: |
           # 1. Add the specific file you are tracking
-          # Use the path defined in your .dvcignore
           dvc add artifacts/data_ingestion/feature_store/flight_fare.csv
           
           # 2. Configure Git for the bot
@@ -58,7 +57,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           
           # 3. Stage the .dvc and .gitignore files
-          git add data/*.dvc .gitignore
+          git add artifacts/data_ingestion/feature_store/flight_fare.csv.dvc .gitignore
           
           # 4. Commit changes
           git commit -m "chore: update data version via CI" || echo "No changes to commit"
