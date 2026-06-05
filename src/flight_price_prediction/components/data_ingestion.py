@@ -27,6 +27,16 @@ class DataIngestion:
             self.data_ingestion_config = data_ingestion_config
             self.mongo_db_url = os.getenv("MONGO_DB_URL")
             self.mongo_client = pymongo.MongoClient(self.mongo_db_url)
+            # CRITICAL: Validate that it exists!
+            if not self.mongo_db_url:
+                raise ValueError("Environment variable MONGO_DB_URL is not set or empty.")
+            
+            logging.info(f"Connecting to MongoDB at: {self.mongo_db_url[:15]}...") # Log first 15 chars
+            self.mongo_client = pymongo.MongoClient(self.mongo_db_url)
+            
+            # Force a ping to verify connectivity immediately
+            self.mongo_client.admin.command('ping')
+            logging.info("Successfully connected to MongoDB.")
         except Exception as e:
             raise CustomException(e, sys)
 
