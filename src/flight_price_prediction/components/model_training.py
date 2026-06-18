@@ -22,9 +22,9 @@ from lightgbm import LGBMRegressor
 import mlflow
 from urllib.parse import urlparse
 
-
-
 import dagshub
+dagshub.auth.add_app_token(os.getenv("DAGSHUB_TOKEN"))
+
 dagshub.init(repo_owner = 'pavani96-ai', repo_name = 'flight_price_prediction', mlflow=True)
 
 os.environ['MLFLOW_TRACKING_URI'] = os.getenv('MLFLOW_TRACKING_URI')
