@@ -1,2 +1,2 @@
-message: Data validation failed - drift detected
-validation_status: false
+message: Data validation passed
+validation_status: true

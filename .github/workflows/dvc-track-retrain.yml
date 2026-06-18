@@ -37,14 +37,11 @@ jobs:
           dvc remote modify origin --local auth basic
           dvc remote modify origin --local user "${{ secrets.DAGSHUB_USER }}"
           dvc remote modify origin --local password "${{ secrets.DAGSHUB_TOKEN }}"
-      
-      - name: Install local package
-        run: pip install -e .
-        
+
       - name: Run data ingestion
         env:
           MONGO_DB_URL: ${{ secrets.MONGO_DB_URL }}
-          PYTHONPATH: ${{ github.workspace }}
+          PYTHONPATH: ${{ github.workspace }}/flight_price_prediction
         run: |
           python main.py
 

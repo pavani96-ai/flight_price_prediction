@@ -1,30 +1,30 @@
 Additional_Info:
   drift_status: false
-  p_value: 0.16073049047864416
+  p_value: 0.1345986197197089
 Airline:
   drift_status: false
-  p_value: 0.1651296164055277
+  p_value: 0.1085897874282794
 Arrival_Time:
   drift_status: false
-  p_value: 0.8905851064635727
+  p_value: 0.35822048840991755
 Date_of_Journey:
   drift_status: false
-  p_value: 0.9221511412729517
+  p_value: 0.503489223286899
 Dep_Time:
   drift_status: false
-  p_value: 0.1220406935904133
+  p_value: 0.5537063547782529
 Destination:
-  drift_status: true
-  p_value: 0.013462734041926347
+  drift_status: false
+  p_value: 0.5496283959817057
 Duration:
   drift_status: false
-  p_value: 0.730998696532396
+  p_value: 0.8947736663641296
 Route:
   drift_status: false
-  p_value: 0.38144789257801387
+  p_value: 0.8389072060663899
 Source:
-  drift_status: true
-  p_value: 0.006538337929855521
+  drift_status: false
+  p_value: 0.41889594361249094
 Total_Stops:
   drift_status: false
-  p_value: 0.737024404047746
+  p_value: 0.5488763341426035

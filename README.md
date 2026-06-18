@@ -10,20 +10,20 @@ The project follows a structured ML pipeline:
     *   Extracts raw flight data from **MongoDB**.
     *   Stores data in a local **Feature Store** (CSV format).
     *   Performs **Train-Test Split** for model evaluation.
-2.  **Data Validation**: (In Progress/Planned) 
+2.  **Data Validation**: 
     *   Ensures data integrity against a predefined schema (`schema.yaml`).
     *   Checks for missing values and data type consistency.
-3.  **Feature Engineering & Transformation**: (In Progress)
+3.  **Feature Engineering & Transformation**: 
     *   Handling categorical variables (OneHotEncoding/TargetEncoding).
     *   Extracting features from date and time components.
     *   Scaling numerical features.
-4.  **Model Training**: (In Progress)
+4.  **Model Training**: 
     *   Training various regression models (Random Forest, XGBoost, etc.).
     *   Hyperparameter tuning using configurations from `params.yaml`.
 5.  **Evaluation**:
     *   Calculating metrics like RMSE, MAE, and R2-Score.
 6.  **Deployment**:
-    *   Ready for deployment as a web application using Flask/FastAPI.
+    *   Ready for deployment as a web application using cleaFastAPI.
 
 ## 🚀 Accomplishments (What’s done so far)
 - [x] **Modular Project Structure**: Established a clean package-based structure (`src/flight_price_prediction`).
