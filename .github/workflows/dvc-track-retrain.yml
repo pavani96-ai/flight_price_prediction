@@ -41,7 +41,7 @@ jobs:
       - name: Run data ingestion
         env:
           MONGO_DB_URL: ${{ secrets.MONGO_DB_URL }}
-          PYTHONPATH: ${{ github.workspace }}/flight_price_prediction
+          PYTHONPATH: ${{ github.workspace }}/src
         run: |
           python main.py
 
