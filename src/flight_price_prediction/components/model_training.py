@@ -27,7 +27,8 @@ token = os.getenv("DAGSHUB_TOKEN")
 
 # 2. Login explicitly if the token exists
 if token:
-    dagshub.login(token=token)
+    dagshub.auth.add_app_token(token)
+    print("Successfully added DagsHub token.")
 else:
     # This acts as a fallback or triggers the auth requirement error
     print("WARNING: DAGSHUB_TOKEN not found in environment.")
