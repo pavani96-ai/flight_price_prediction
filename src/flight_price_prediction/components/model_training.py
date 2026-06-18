@@ -23,7 +23,14 @@ import mlflow
 from urllib.parse import urlparse
 
 import dagshub
+token = os.getenv("DAGSHUB_TOKEN")
 
+# 2. Login explicitly if the token exists
+if token:
+    dagshub.login(token=token)
+else:
+    # This acts as a fallback or triggers the auth requirement error
+    print("WARNING: DAGSHUB_TOKEN not found in environment.")
 
 dagshub.init(repo_owner = 'pavani96-ai', repo_name = 'flight_price_prediction', mlflow=True)
 
