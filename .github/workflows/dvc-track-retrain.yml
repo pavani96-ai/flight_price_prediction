@@ -37,11 +37,10 @@ jobs:
           dvc remote modify origin --local auth basic
           dvc remote modify origin --local user "${{ secrets.DAGSHUB_USER }}"
           dvc remote modify origin --local password "${{ secrets.DAGSHUB_TOKEN }}"
-      - name: Debug Python path and files
+      - name: Debug token
         run: |
-          pwd
-          ls -R src/flight_price_prediction/utils/metrics
-          python -c "import sys; print(sys.path)"
+          echo "DAGSHUB_USER: $DAGSHUB_USER"
+          echo "DAGSHUB_TOKEN length: ${#DAGSHUB_TOKEN}"
       - name: Run data ingestion
         env:
           MONGO_DB_URL: ${{ secrets.MONGO_DB_URL }}
