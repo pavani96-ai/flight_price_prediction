@@ -47,7 +47,7 @@ jobs:
           MONGO_DB_URL: ${{ secrets.MONGO_DB_URL }}
           PYTHONPATH: ${{ github.workspace }}/src
         run: |
-          python main.py
+          python main1.py
 
       - name: Track feature store with DVC
         run: |
