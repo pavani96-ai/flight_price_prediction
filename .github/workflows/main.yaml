@@ -22,7 +22,7 @@ jobs:
       - name: Lint Code
         run: echo "Running unit tests"
 
-  build-andpush-ecr-image:
+  build-and-push-ecr-image:
     name: Continuous Delivery
     needs: integration
     runs-on: ubuntu-latest
@@ -56,3 +56,44 @@ jobs:
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"  
+  continuous-Deployment:
+    needs: build-and-push-ecr-image
+    runs-on: self-hosted
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v1
+
+      - name: Pull and Run
+        env:
+          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          ECR_REPOSITORY: ${{ secrets.ECR_REPOSITORY_NAME }}
+        run: |
+          docker pull $ECR_REGISTRY/$ECR_REPOSITORY:latest
+          docker stop flight-price-prediction 2>/dev/null || true
+          docker rm flight-price-prediction 2>/dev/null || true
+          
+          # UPDATE THIS PART BELOW:
+          docker run -d -p 8000:8000 --name=flight-price-prediction \
+            --ipc="host" \
+            -e AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }} \
+            -e AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }} \
+            -e AWS_REGION=${{ secrets.AWS_REGION }} \
+            -e MONGO_DB_URL="${{ secrets.MONGO_DB_URL }}" \
+            -e DAGSHUB_TOKEN="${{ secrets.DAGSHUB_TOKEN }}" \
+            
+            -e ENVIRONMENT="production" \
+            $ECR_REGISTRY/$ECR_REPOSITORY:latest
+      - name: Clean previous images and containers
+        run: |
+         docker system prune -f
+ 
