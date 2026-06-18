@@ -23,8 +23,7 @@ import mlflow
 from urllib.parse import urlparse
 
 import dagshub
-#updated dagshub token
-dagshub.auth.add_app_token(os.getenv("DAGSHUB_TOKEN"))
+
 
 dagshub.init(repo_owner = 'pavani96-ai', repo_name = 'flight_price_prediction', mlflow=True)
 
