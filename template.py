@@ -19,7 +19,7 @@ list_of_files = [
     f"src/{Project_name}/utils/__init__.py",
     f"src/{Project_name}/utils/common.py",
     f"src/{Project_name}/utils/ml_utils/model.py",
-    f"src/{Project_name}/utils/metrics/Regression_metrics.py",
+    f"src/{Project_name}/utils/metrics/regression_metrics.py",
     f"src/{Project_name}/entity/__init__.py",
     f"src/{Project_name}/entity/config_entity.py",
     f"src/{Project_name}/constants/__init__.py",
