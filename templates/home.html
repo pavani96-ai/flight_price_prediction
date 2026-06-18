@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flight Fare Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 640px;
+            margin: 48px auto;
+            padding: 0 16px;
+            line-height: 1.5;
+        }
+        h1 { margin-bottom: 8px; }
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        button, input[type="submit"] {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        a { color: #2563eb; }
+    </style>
+</head>
+<body>
+    <h1>Flight Fare Prediction</h1>
+    <p>Upload a CSV file to predict flight prices, or start model training.</p>
+
+    <div class="card">
+        <h2>Predict</h2>
+        <form action="/predict" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" accept=".csv" required>
+            <input type="submit" value="Upload and Predict">
+        </form>
+    </div>
+
+    <div class="card">
+        <h2>Train</h2>
+        <p>Training runs the full pipeline and may take several minutes.</p>
+        <a href="/train"><button type="button">Start Training</button></a>
+    </div>
+
+    <p><a href="/docs">API docs</a></p>
+</body>
+</html>

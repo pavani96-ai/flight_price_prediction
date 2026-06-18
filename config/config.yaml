@@ -17,4 +17,24 @@ data_validation:
   valid_train_file_name: artifacts/data_validation/validated_dir/train.csv
   valid_test_file_name: artifacts/data_validation/validated_dir/test.csv
   Status_File: artifacts/data_validation/status.txt
-  
+
+feature_engineering:
+  root_dir: artifacts/feature_engineering
+  engineered_train_file_name: artifacts/feature_engineering/engineered/train.csv
+  engineered_test_file_name: artifacts/feature_engineering/engineered/test.csv
+  feature_engineered_pkl_file: artifacts/feature_engineering/feature_engineered.pkl
+
+data_transformation:
+  root_dir: artifacts/data_transformation
+  transformed_train_file_name: artifacts/data_transformation/processed/train.npy
+  transformed_test_file_name: artifacts/data_transformation/processed/test.npy
+  preprocessor_object_file_name: artifacts/data_transformation/preprocessor/preprocessor.pkl
+  target_column: price
+
+model_trainer:
+  root_dir: artifacts/model_trainer
+  trained_models_dir: artifacts/model_trainer/models
+  model_file_name: artifacts/model_trainer/models/model.pkl
+
+Training_Bucket_Name: flightpriceprediction
+final_model_dir: final_model

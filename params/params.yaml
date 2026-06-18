@@ -1,2 +1,38 @@
 data_ingestion:
   train_test_split_ratio: 0.2
+
+feature_engineering:
+  target_column: price
+  stop_map:
+    non-stop: 0
+    1 stop: 1
+    2 stops: 2
+    3 stops: 3
+    4 stops: 4
+  replace_destinations:
+    New Delhi: Delhi
+
+data_transformation:
+  target_column: price
+  numerical_columns:
+    - month
+    - day
+    - duration_to_minutes
+    - dep_sin
+    - dep_cos
+    - arrival_sin
+    - arrival_cos
+    - duration_times_stops
+    - total_stops
+  categorical_columns:
+    - airline
+    - source
+    - destination
+    - route_interaction
+  scaler: standard
+  encoder: onehotencoder
+
+model_trainer:
+  expected_score: 0.6
+  over_fitting_underfitting_threshold: 0.5
+

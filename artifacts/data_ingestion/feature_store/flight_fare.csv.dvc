@@ -1,6 +1,0 @@
-outs:
-- md5: 1cf28054fcdbb4eee2d6f4719a5b5e83
-  size: 3288897
-  isexec: true
-  hash: md5
-  path: flight_fare.csv

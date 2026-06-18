@@ -4,6 +4,10 @@ notebook
 numpy
 ipykernel
 scikit-learn
+xgboost
+lightgbm
+catboost
+scipy
 matplotlib
 seaborn
 python-box
@@ -22,6 +26,7 @@ openpyxl
 dvc
 dvc-s3
 fsspec==2024.12.0
+python-multipart
 
 
 # -e .

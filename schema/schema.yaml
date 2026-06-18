@@ -12,3 +12,19 @@ COLUMNS:
 
 TARGET_COLUMN:
   name: Price
+
+FEATURE_ENGINEERING_COLUMNS:
+  airline: object
+  source: object
+  destination: object
+  total_stops: int
+  route_interaction: object
+  month: int
+  day: int
+  duration_to_minutes: int
+  dep_sin: float
+  dep_cos: float
+  arrival_sin: float
+  arrival_cos: float
+  duration_times_stops: int
+  price: int

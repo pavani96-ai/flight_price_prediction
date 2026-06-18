@@ -2,7 +2,7 @@
 import sys
 from pathlib import Path
 from src.flight_price_prediction.entity.config_entity import DataValidationConfig
-from src.flight_price_prediction.entity.artifact_entity import DataIngestionArtifact,DatavalidationArtifact
+from src.flight_price_prediction.entity.artifact_entity import DataIngestionArtifact,DataValidationArtifact
 from src.flight_price_prediction.exception.exception import CustomException
 from src.flight_price_prediction.logging.logger import logging
 from src.flight_price_prediction.utils.common import *
@@ -124,7 +124,7 @@ class DataValidation:
         except Exception as e:
             raise CustomException(e, sys)
         
-    def initiate_data_validation(self) -> DatavalidationArtifact:
+    def initiate_data_validation(self) -> DataValidationArtifact:
         try:
             train_file_name = self.data_ingestion_artifact.training_file_name
             test_file_name = self.data_ingestion_artifact.testing_file_name
@@ -160,7 +160,7 @@ class DataValidation:
             write_yaml_file(file_path=str(self.data_validation_config.Status_File), content=status_report)
             logging.info(f"Validation status saved to {self.data_validation_config.Status_File}")
 
-            data_validation_artifact = DatavalidationArtifact(
+            data_validation_artifact = DataValidationArtifact(
                 validation_status=Path(self.data_validation_config.Status_File),
                 valid_train_file_name=Path(self.data_validation_config.valid_train_file_name),
                 valid_test_file_name=Path(self.data_validation_config.valid_test_file_name),
