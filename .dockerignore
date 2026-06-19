@@ -1,0 +1,10 @@
+# Ignore everything not needed for the runtime
+.git
+.gitignore
+venv
+__pycache__
+artifacts
+prediction_output
+*.log
+*.csv
+.env

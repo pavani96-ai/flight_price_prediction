@@ -111,6 +111,14 @@ class TrainPipeline:
             self.sync_artifact_dir_to_s3()
             self.sync_final_model_dir_to_s3()
             
+            # Remove local artifacts after successful sync to free up space
+            import shutil
+            if os.path.exists(self.s3_config.artifact_dir):
+                shutil.rmtree(self.s3_config.artifact_dir)
+            
+            logging.info("Local artifacts deleted to free up disk space.")
+
+            
             return model_trainer_artifact
         except Exception as e:
             raise CustomException(e,sys)

@@ -1,2 +1,0 @@
-message: Data validation passed
-validation_status: true
