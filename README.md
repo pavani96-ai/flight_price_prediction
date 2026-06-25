@@ -98,7 +98,7 @@ The project follows a structured ML pipeline:
   ```bash
   uvicorn app:app --host 0.0.0.0 --port 8000
   ```
-  Visit http://localhost:8080/docs in your browser to interactively test the prediction payload endpoints via the Swagger UI.
+  Visit http://localhost:8000/docs in your browser to interactively test the prediction payload endpoints via the Swagger UI.
 
 7. **Containerization & Deployment**
   ```bash
